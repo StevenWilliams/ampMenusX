@@ -4,7 +4,7 @@
 
     <groupId>ninja.amp</groupId>
     <artifactId>ampmenus</artifactId>
-    <version>1.4-SNAPSHOT</version>
+    <version>1.5-SNAPSHOT</version>
     <inceptionYear>2014</inceptionYear>
     <name>AmpMenus</name>
     <description>An inventory menu library for Bukkit</description>
@@ -16,18 +16,17 @@
 
     <repositories>
         <repository>
-            <id>bukkit-repo</id>
-            <url>http://repo.bukkit.org/content/groups/public/</url>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
         </repository>
+
     </repositories>
 
     <dependencies>
         <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>bukkit</artifactId>
-            <version>1.7.9-R0.3-SNAPSHOT</version>
-            <type>jar</type>
-            <scope>provided</scope>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.14.2-R0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
@@ -53,55 +52,7 @@
                 </configuration>
             </plugin>
             <!-- License header plugin -->
-            <plugin>
-                <groupId>com.mycila.maven-license-plugin</groupId>
-                <artifactId>maven-license-plugin</artifactId>
-                <version>1.10.b1</version>
-                <executions>
-                    <execution>
-                        <phase>clean</phase>
-                        <goals>
-                            <goal>format</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <quiet>false</quiet>
-                    <encoding>UTF-8</encoding>
-                    <strictCheck>true</strictCheck>
-                    <header>${basedir}/HEADER.txt</header>
-                    <keywords>
-                        <keyword>${project.name}</keyword>
-                        <keyword>license</keyword>
-                    </keywords>
-                    <mapping>
-                        <java>SLASHSTAR_STYLE</java>
-                    </mapping>
-                    <properties>
-                        <name>${project.name}</name>
-                        <url>${project.organization.url}</url>
-                        <copyright>Copyright (c) ${project.inceptionYear}</copyright>
-                    </properties>
-                    <includes>
-                        <include>src/main/java/**</include>
-                        <include>src/test/java/**</include>
-                    </includes>
-                </configuration>
-            </plugin>
-            <!-- Javadoc .jar -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9.1</version>
-                <executions>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+
         </plugins>
     </build>
 
